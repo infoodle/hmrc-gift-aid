@@ -572,6 +572,7 @@ class GiftAid extends GovTalk
                 $claimOpen = true;
                 $claimNumber++;
                 $gadNumber = 0;
+                $currentClaimOrgRef = $d['org_hmrc_ref'];
             }
 
             if (isset($d['donation_date'])) {
@@ -1096,7 +1097,7 @@ class GiftAid extends GovTalk
                 '/<(vat:)?IRmark Type="generic">[A-Za-z0-9\/\+=]*<\/(vat:)?IRmark>/',
                 '',
                 $xmlString,
-                - 1,
+                -1,
                 $matchCount
             );
             if ($matchCount == 1) {
