@@ -2,17 +2,11 @@
 
 **A library for charities and CASCs to claim Gift Aid (including Small Donations) from HMRC**
 
-[![Build Status](https://travis-ci.org/thebiggive/hmrc-gift-aid.png?branch=main)](https://travis-ci.org/thebiggive/hmrc-gift-aid)
-[![Latest Stable Version](https://poser.pugx.org/thebiggive/hmrc-gift-aid/version.png)](https://packagist.org/packages/thebiggive/hmrc-gift-aid)
-[![Total Downloads](https://poser.pugx.org/thebiggive/hmrc-gift-aid/d/total.png)](https://packagist.org/packages/thebiggive/hmrc-gift-aid)
-[![License](https://poser.pugx.org/thebiggive/hmrc-gift-aid/license.svg)](https://packagist.org/packages/thebiggive/hmrc-gift-aid)
-
 'Gift Aid' is a UK tax incentive that enables tax-effective giving by individuals to charities
 in the United Kingdom. Gift Aid increases the value of donations to charities and Community
 Amateur Sports Clubs (CASCs) by allowing them to reclaim basic rate tax on a donor's gift.
 
 'HMRC Charity Repayment Claims' is a library for submitting Gift Aid claims to HMRC.
-
 
 ## Installation
 
@@ -22,14 +16,14 @@ it to your `composer.json` file:
 ```json
 {
     "require": {
-        "thebiggive/hmrc-gift-aid": "^1.0"
+        "infoodle/hmrc-gift-aid": "^1.0"
     }
 }
 ```
 
 And run composer to update your dependencies:
 
-$ curl -s http://getcomposer.org/installer | php
+$ curl -s <http://getcomposer.org/installer> | php
 $ php composer.phar update
 
 ## Test
@@ -80,9 +74,10 @@ assured delivery of that initial message.
 
 - **The Claim Response** This is not necessarily the first message you get back after sending
 your Request - there will be polling and other protocol messages first. HMRC will first verify
-the validity of the submitted claim (*__note__ this is verifying that the structure of the
+the validity of the submitted claim (***note** this is verifying that the structure of the
 message is valid and that the data conforms to the required standards*). Once this is done you
 will receive a response message with an acknowledgement similar to this:
+
     ```
     HMRC has received the HMRC-CHAR-CLM document ref: AA12345 at 09.10 on 01/01/2014. The
     associated IRmark was: XXX9XXX9XXX9XXX9XXX9XXX9XXX9XXX9. We strongly recommend that you
@@ -301,7 +296,6 @@ foreach ($response['statusRecords'] as $status_record) {
     }
 }
 ```
-
 
 ## More Information
 
